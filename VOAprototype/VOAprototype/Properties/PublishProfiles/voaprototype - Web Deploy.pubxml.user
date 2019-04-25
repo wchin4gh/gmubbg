@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8eYl8KAR8ki+c6b4uOf9yQAAAAACAAAAAAAQZgAAAAEAACAAAADTOISNFyrYa/uxS84Pu76F0WEdPm2RDcLxRJTxNtWoBAAAAAAOgAAAAAIAACAAAADW1GilVqQPflPlCyHBnverdK9z4qO2d/63gvUvRp/M9YAAAABU7P3YujQtmGWnxUSvIuSgMjK73SQEH/FXPkPB0iWxiqt/vDIDWTed//v2+e97IOs3v79Tn9Xzk+LwmzgKoNcpFw9OrQBhjlhW7qmYRBt2N24z0uMjqSy/w5wXzkapcpmWBMjZ8wqUVhLTJ2tcV/8QHBcNnciPEBF5bS/NbaahcUAAAAAwbUPGB2enF6i+eD5cKYNr76i/gpbx7WCMZoz+z7z2cHlo5otexWzbOHby8dl49aFoqDOJAT7uS9fDswLIcYqE</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="VOAprototypeContext">
+      <Value>Data Source=tcp:voaprototypedbserver.database.windows.net,1433%3bInitial Catalog=voaprototype_db%3bUser Id=sqladmin%40voaprototypedbserver%3bPassword=WCSA03!%29gmu</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="VOAprototype.Models.VOAprototypeContext">
+      <Value>Data Source=tcp:voaprototypedbserver.database.windows.net,1433%3bInitial Catalog=voaprototype_db%3bUser Id=sqladmin%40voaprototypedbserver%3bPassword=WCSA03!%29gmu</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<VOAprototype.Models.PurchaseOrder>
+
+@{
+    ViewData["Title"] = "Approvals";
+}
+
+<h1>Approvals</h1>
+
+<form asp-controller="PurchaseOrders" asp-action="Index">
+    <p>
+        Search: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" /> |
+        <a asp-action="Index">Back to List</a>
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusinessFunction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Finance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ITTower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ITFunction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TBMITService)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TBMCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TBMName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EgovBRM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Application)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Units)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatsPerLicense)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatsUsed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpirationDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.ApprovalDate == null && (item.ExpirationDate == null || item.ExpirationDate.Value.CompareTo(DateTime.Now) > 0))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Entity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BusinessFunction)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Finance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ITTower)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ITFunction)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TBMITService)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TBMCategory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TBMName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EgovBRM)
+                    </td>
+                    <td>
+                        <a asp-action="Approve" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Application)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Units)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeatsPerLicense)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeatsUsed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EntryDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpirationDate)
+                    </td>
+                    <td>
+                        <a asp-action="Approve" asp-route-id="@item.Id">Approve</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

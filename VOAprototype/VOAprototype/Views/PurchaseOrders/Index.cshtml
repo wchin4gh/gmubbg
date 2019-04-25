@@ -1,0 +1,89 @@
+﻿@model IEnumerable<VOAprototype.Models.PurchaseOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Purchase Orders</h1>
+<form asp-controller="PurchaseOrders" asp-action="Index">
+    <p>
+        Search: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" /> |
+        <a asp-action="Index">Back to List</a>
+    </p>
+</form>
+<form method="post" enctype="multipart/form-data" asp-controller="PurchaseOrders" asp-action="Upload">
+    <div class="form-group">
+        <div class="row">
+            <input type="file" name="file" />
+            <input type="submit" value="Upload" /> |
+            <button asp-action="Export">Export</button>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ITFunction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Application)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Units)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovalDate)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITFunction)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Application)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Units)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovalDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create">Submit New Purchase Order</a>
+</p>
