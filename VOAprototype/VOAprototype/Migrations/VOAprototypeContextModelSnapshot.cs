@@ -24,14 +24,20 @@ namespace VOAprototype.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("WikiPage");
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Unigram");
 
                     b.HasKey("Id");
 
                     b.ToTable("ITFunction");
                 });
 
-            modelBuilder.Entity("VOAprototype.Models.PurchaseOrder", b =>
+            modelBuilder.Entity("VOAprototype.Models.ITInvestment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,11 +63,12 @@ namespace VOAprototype.Migrations
 
                     b.Property<string>("Finance");
 
+                    b.Property<string>("FirstClassification");
+
                     b.Property<string>("ITFunction")
                         .IsRequired();
 
-                    b.Property<string>("ITTower")
-                        .IsRequired();
+                    b.Property<string>("ITTower");
 
                     b.Property<DateTime?>("PurchaseDate");
 
@@ -69,11 +76,15 @@ namespace VOAprototype.Migrations
 
                     b.Property<int?>("SeatsUsed");
 
+                    b.Property<string>("SecondClassification");
+
                     b.Property<string>("TBMCategory");
 
                     b.Property<string>("TBMITService");
 
                     b.Property<string>("TBMName");
+
+                    b.Property<string>("ThirdClassification");
 
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");

@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using VOAprototype.Models;
-using VOAprototype.Classifier;
+using VOAprototype.Classification;
 
 namespace VOAprototype
 {
@@ -39,12 +39,11 @@ namespace VOAprototype
 
             services.AddDbContext<VOAprototypeContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VOAprototypeContext")));
-
-            Cache.Init();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, VOAprototypeContext context)
         {
             if (env.IsDevelopment())
             {
@@ -56,6 +55,8 @@ namespace VOAprototype
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            
+            Classifier.Init(context);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -65,7 +66,7 @@ namespace VOAprototype
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=PurchaseOrders}/{action=Index}/");
+                    template: "{controller=ITInvestments}/{action=Index}/{searchString?}");
             });
         }
     }

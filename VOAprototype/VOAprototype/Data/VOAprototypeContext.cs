@@ -9,12 +9,17 @@ namespace VOAprototype.Models
 {
     public class VOAprototypeContext : DbContext
     {
+        public VOAprototypeContext() : base()
+        {
+
+        }
+
         public VOAprototypeContext (DbContextOptions<VOAprototypeContext> options)
             : base(options)
         {
         }
 
-        public DbSet<VOAprototype.Models.PurchaseOrder> PurchaseOrder { get; set; }
+        public DbSet<VOAprototype.Models.ITInvestment> PurchaseOrder { get; set; }
 
         public DbSet<VOAprototype.Models.ITFunction> ITFunction { get; set; }
     }

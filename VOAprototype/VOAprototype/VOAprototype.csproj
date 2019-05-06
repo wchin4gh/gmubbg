@@ -17,21 +17,18 @@
     <Compile Remove="Migrations\20190420015523_remove_purchase_date.Designer.cs" />
     <Compile Remove="Migrations\20190422233511_purchase_date_added.cs" />
     <Compile Remove="Migrations\20190422233511_purchase_date_added.Designer.cs" />
+    <Compile Remove="Migrations\20190506015036_entry_date_not_required.cs" />
+    <Compile Remove="Migrations\20190506015036_entry_date_not_required.Designer.cs" />
   </ItemGroup>
 
 
   <ItemGroup>
     <PackageReference Include="csvhelper" Version="12.1.2" />
-    <PackageReference Include="ironpython" Version="2.7.9" />
+    <PackageReference Include="microsoft.aspnet.webapi.client" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="microsoft.powerbi.api" Version="2.5.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Lib\" />
   </ItemGroup>
 
 </Project>

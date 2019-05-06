@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "e5f21fd4cb6def283b14f3b4f8247d77469f2cc7"
+    "signature": "4292d026b33937c09fdeee5b1c982b7e0db5ee71"
   },
   "compilationOptions": {
     "defines": [
@@ -30,7 +30,7 @@
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
           "CsvHelper": "12.1.2",
-          "IronPython": "2.7.9",
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.PowerBI.Api": "2.5.0"
         },
         "runtime": {
@@ -55,55 +55,19 @@
           "lib/netstandard2.0/CsvHelper.dll": {}
         }
       },
-      "DynamicLanguageRuntime/1.2.2": {
+      "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "dependencies": {
-          "System.CodeDom": "4.5.0",
-          "System.Configuration.ConfigurationManager": "4.5.0"
+          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json.Bson": "1.0.1"
         },
         "runtime": {
-          "lib/netcoreapp2.1/Microsoft.Dynamic.dll": {
-            "assemblyVersion": "1.2.2.0",
-            "fileVersion": "1.2.2.1000"
-          },
-          "lib/netcoreapp2.1/Microsoft.Scripting.Metadata.dll": {
-            "assemblyVersion": "1.2.2.0",
-            "fileVersion": "1.2.2.1000"
-          },
-          "lib/netcoreapp2.1/Microsoft.Scripting.dll": {
-            "assemblyVersion": "1.2.2.0",
-            "fileVersion": "1.2.2.1000"
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
           }
         },
         "compile": {
-          "lib/netcoreapp2.1/Microsoft.Dynamic.dll": {},
-          "lib/netcoreapp2.1/Microsoft.Scripting.Metadata.dll": {},
-          "lib/netcoreapp2.1/Microsoft.Scripting.dll": {}
-        }
-      },
-      "IronPython/2.7.9": {
-        "dependencies": {
-          "DynamicLanguageRuntime": "1.2.2",
-          "Microsoft.Win32.Registry": "4.5.0",
-          "System.Text.Encoding.CodePages": "4.5.0"
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/IronPython.Modules.dll": {
-            "assemblyVersion": "2.7.9.0",
-            "fileVersion": "2.7.9.1000"
-          },
-          "lib/netcoreapp2.1/IronPython.SQLite.dll": {
-            "assemblyVersion": "2.7.9.0",
-            "fileVersion": "2.7.9.1000"
-          },
-          "lib/netcoreapp2.1/IronPython.dll": {
-            "assemblyVersion": "2.7.9.0",
-            "fileVersion": "2.7.9.1000"
-          }
-        },
-        "compile": {
-          "lib/netcoreapp2.1/IronPython.Modules.dll": {},
-          "lib/netcoreapp2.1/IronPython.SQLite.dll": {},
-          "lib/netcoreapp2.1/IronPython.dll": {}
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -476,17 +440,6 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
-      "System.CodeDom/4.5.0": {
-        "runtime": {
-          "lib/netstandard2.0/System.CodeDom.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        },
-        "compile": {
-          "ref/netstandard2.0/System.CodeDom.dll": {}
-        }
-      },
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -610,21 +563,6 @@
           "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
         }
       },
-      "System.Configuration.ConfigurationManager/4.5.0": {
-        "dependencies": {
-          "System.Security.Cryptography.ProtectedData": "4.5.0",
-          "System.Security.Permissions": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
-        }
-      },
       "System.Linq.Parallel/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -640,32 +578,6 @@
         }
       },
       "System.Reflection.TypeExtensions/4.4.0": {},
-      "System.Security.Cryptography.ProtectedData/4.5.0": {
-        "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        }
-      },
-      "Microsoft.AspNet.WebApi.Client/5.2.6": {
-        "dependencies": {
-          "Newtonsoft.Json": "11.0.2",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.AspNetCore/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics": "2.2.0",
@@ -707,7 +619,7 @@
       },
       "Microsoft.AspNetCore.App/2.2.0": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.6",
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.Antiforgery": "2.2.0",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
@@ -3486,9 +3398,6 @@
           "Microsoft.NETCore.Platforms": "2.2.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
-        "compile": {
-          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
-        },
         "compileOnly": true
       },
       "System.Text.Encoding.Extensions/4.3.0": {
@@ -3680,19 +3589,12 @@
       "path": "csvhelper/12.1.2",
       "hashPath": "csvhelper.12.1.2.nupkg.sha512"
     },
-    "DynamicLanguageRuntime/1.2.2": {
+    "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xNsMK0WWX85K5CNIIdjiHa3Va6hIZA5/GRBoMYG7KJ+iU6pCFFJMmq/EL0QjHmzWO14PQqviIZ0JQHCArv4gjQ==",
-      "path": "dynamiclanguageruntime/1.2.2",
-      "hashPath": "dynamiclanguageruntime.1.2.2.nupkg.sha512"
-    },
-    "IronPython/2.7.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-CXQT1XUPKapVZ1r4coR+lFlC1FEsI4sDJg/9iSug/fUnWuYZ8APAPFutPG09T2uwcsWk40s4ckqO27/dbsA6lw==",
-      "path": "ironpython/2.7.9",
-      "hashPath": "ironpython.2.7.9.nupkg.sha512"
+      "sha512": "sha512-/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
+      "path": "microsoft.aspnet.webapi.client/5.2.7",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
@@ -3834,13 +3736,6 @@
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
     },
-    "System.CodeDom/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gqpR1EeXOuzNQWL7rOzmtdIz3CaXVjSQCiaGOs2ivjPwynKSJYm39X81fdlp7WuojZs/Z5t1k5ni7HtKQurhjw==",
-      "path": "system.codedom/4.5.0",
-      "hashPath": "system.codedom.4.5.0.nupkg.sha512"
-    },
     "System.Composition/1.0.31": {
       "type": "package",
       "serviceable": true,
@@ -3883,13 +3778,6 @@
       "path": "system.composition.typedparts/1.0.31",
       "hashPath": "system.composition.typedparts.1.0.31.nupkg.sha512"
     },
-    "System.Configuration.ConfigurationManager/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UIFvaFfuKhLr9u5tWMxmVoDPkFeD+Qv8gUuap4aZgVGYSYMdERck4OhLN/2gulAc0nYTEigWXSJNNWshrmxnng==",
-      "path": "system.configuration.configurationmanager/4.5.0",
-      "hashPath": "system.configuration.configurationmanager.4.5.0.nupkg.sha512"
-    },
     "System.Linq.Parallel/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3903,20 +3791,6 @@
       "sha512": "sha512-dkmh/ySlwnXJp/1qYP9uyKkCK1CXR/REFzl7abHcArxBcV91mY2CgrrzSRA5Z/X4MevJWwXsklGRdR3A7K9zbg==",
       "path": "system.reflection.typeextensions/4.4.0",
       "hashPath": "system.reflection.typeextensions.4.4.0.nupkg.sha512"
-    },
-    "System.Security.Cryptography.ProtectedData/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-wLBKzFnDCxP12VL9ANydSYhk59fC4cvOr9ypYQLPnAj48NQIhqnjdD2yhP8yEKyBJEjERWS9DisKL7rX5eU25Q==",
-      "path": "system.security.cryptography.protecteddata/4.5.0",
-      "hashPath": "system.security.cryptography.protecteddata.4.5.0.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Client/5.2.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-91JMnE9zdIDphG00qgRvl8ZwKEjqAbNlJdfXUoMiIWPfpYyH7fyCsTSj6/aynRdw/Qr/K70xC7QC6MOJ1vFBJQ==",
-      "path": "microsoft.aspnet.webapi.client/5.2.6",
-      "hashPath": "microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.2.0": {
       "type": "package",

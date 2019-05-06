@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace VOAprototype.Models
 {
     public class ITFunction
     {
-        [Display(Name = "Name")]
+        [Display(Name = "Id")]
         public string Id { get; set; }
 
-        [Display(Name = "Wikipedia Page")]
-        public string WikiPage { get; set; }
+        [Display(Name = "Name")]
+        [Required]
+        public string Name { get; set; }
+
+        [Display(Name = "Description")]
+        [Required]
+        public string Description { get; set; }
+
+        public string Unigram { get; set; }
     }
 }
